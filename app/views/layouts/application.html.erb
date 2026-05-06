@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
     <title><%= content_for(:title) || "Message Me" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,6 +27,14 @@
   </head>
 
   <body>
+    <div class="ui small inverted menu">
+      <div class="ui container">
+      <%= render "layouts/navigation" %>
+        </div>
+      </div>
+    </div>
+    <div class="ui container">
     <%= yield %>
+    </div>
   </body>
 </html>
