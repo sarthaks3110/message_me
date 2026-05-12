@@ -1,2 +1,42 @@
-<h1>this is root page</h1>
+<h2 class="ui center aligned icon header">
+  <i class="circular orange power off icon"></i>
+</h2>
+
+<h3 class="ui center aligned header">
+  Say Something
+</h3>
+
+<div class="ui two column grid">
+  <div class="twelve wide column">
+    <div class="ui fluid raised card">
+      <div class="content chatbox" id="messages" data-controller="chatbox">
+        <div class="ui feed" id="message-feed">
+          <%= render @messages %>
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_with model: @message, url: messages_path, class: "ui reply form", data: { turbo: true, controller: "message-form", action: "turbo:submit-end->message-form#afterSubmit" } do |f| %>
+          <div class="field">
+            <div class="ui action input" style="width: 100%;">
+              <%= f.text_field :body, placeholder: "Type your message here...", autocomplete: "off", data: { message_form_target: "input" } %>
+              <button class="ui orange icon button">
+                <i class="edit icon"></i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+</div>
+</div>
+  <div class="four wide column">
+    <div class="ui fluid raised card">
+      <div class="content">
+        <h4 class="ui header">Online users</h4>
+        <div class="ui inverted vertical pointing menu" id="online-users-list">
+          <div class="item">Loading...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 

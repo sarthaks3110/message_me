@@ -1,1 +1,25 @@
 @import "semantic-ui";
+
+.chatbox {
+  height: 450px;
+  overflow-y: auto !important;
+  padding: 1.5rem !important;
+  background-color: #ffffff !important;
+  border-radius: 4px !important;
+}
+
+.login-container {
+  min-height: calc(100vh - 60px);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container .column {
+  max-width: 900px;
+  width: 100%;
+}
+
+.login-container {
+  margin-top: -150px !important;
+}

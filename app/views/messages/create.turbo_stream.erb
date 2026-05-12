@@ -1,0 +1,4 @@
+<%= turbo_stream.append "message-feed" do %>
+  <%= render partial: "messages/message", locals: { message: @message } %>
+<% end %>
+
